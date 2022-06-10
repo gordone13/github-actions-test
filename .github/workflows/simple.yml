@@ -14,12 +14,13 @@ jobs:
           npm -v
       - name: python command
         run: |
-          import platform
+          import platforms
           print
           (platform.processor())
         shell: python
   run-windows-command:
     runs-on: windows-latest
+    needs: [run-shell-command]
     steps:
       - name: Diectory Powershell
         run: Get-Location
